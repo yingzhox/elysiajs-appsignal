@@ -1,15 +1,32 @@
 # Elysia with Bun runtime
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
+## Install bun
+
 ```bash
-bun create elysia ./elysia-example
+curl -fsSL https://bun.sh/install | bash
 ```
 
-## Development
-To start the development server run:
+## Steps to show appsignal integration failure
+
+```
+export APPSIGNAL_PUSH_API_KEY={key}
+export APPSIGNAL_APP_NAME={name}
+```
+
+First, build the project:
+
 ```bash
-bun run dev
+bun build.ts
+cp package.json dist/
+cp appsignal.cjs dist/
+```
+
+Now run the built server:
+
+```bash
+
+cd dist && bun install --production && cd ..
+bun run dist/index.js
 ```
 
 Open http://localhost:3000/ with your browser to see the result.
