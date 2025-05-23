@@ -29,4 +29,10 @@ bun install --production
 bun run index.js
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Then you should see:
+
+```
+🛠️  Running preload...
+WARNING: Error when reading appsignal config, appsignal (as 501/20) not starting: Required environment variable '_APPSIGNAL_APP_ENV' not present
+🦊 Elysia is running at localhost:3001
+```
